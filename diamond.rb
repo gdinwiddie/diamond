@@ -10,7 +10,11 @@ class Diamond
   def representation
     output= ""
     @letters.each { |letter| 
-      output << letter+"\n"
+      @letters.reverse.each { |position|
+	character= (position == letter) ? letter : '_'
+	output << character
+      }
+      output << "\n"
     }
     @letters.reverse[1..-1].each { |letter| 
       output << letter+"\n"

@@ -22,6 +22,10 @@ describe Diamond do
     it "has three lines in the representation" do
       expect(subject.representation.lines.count).to eql 3
     end
+
+    it "indents the first line" do
+      expect(subject.representation.lines[0]).to start_with "_A"
+    end
   end
   
   describe '.create(C)' do
