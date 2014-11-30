@@ -15,4 +15,12 @@ describe Diamond do
       expect(subject.representation).to eql "A\n"
     end
   end
+  
+  describe '.create(B)' do
+    subject { Diamond.create('B') }
+
+    it "has three lines in the representation" do
+      expect(subject.representation.lines.count).to eql 3
+    end
+  end
 end
