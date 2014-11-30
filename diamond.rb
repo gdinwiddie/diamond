@@ -11,19 +11,24 @@ class Diamond
     (position == letter) ? letter : '_'
   end
 
+  def line_for_letter (letter)
+    line= ""
+    @letters.reverse.each { |position|
+      line << either_letter_or_blank(position, letter)
+    }
+    @letters[1..-1].each { |position| 
+      line << either_letter_or_blank(position, letter)
+    }
+    line << "\n"
+  end
+
   def representation
     output= ""
     @letters.each { |letter| 
-      @letters.reverse.each { |position|
-	output << either_letter_or_blank(position, letter)
-      }
-      @letters[1..-1].each { |position| 
-	output << either_letter_or_blank(position, letter)
-      }
-      output << "\n"
+      output << line_for_letter(letter)
     }
     @letters.reverse[1..-1].each { |letter| 
-      output << letter+"\n"
+      output << line_for_letter(letter)
     }
     output
   end

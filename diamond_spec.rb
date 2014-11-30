@@ -30,6 +30,14 @@ describe Diamond do
     it "fills out the first line" do
       expect(subject.representation.lines[0]).to end_with "A_\n"
     end
+
+    it "outputs the correct diamond" do
+      expected= "_A_\n"+
+		"B_B\n"+
+		"_A_\n"
+      expect(subject.representation).to eql expected
+    end
+
   end
   
   describe '.create(C)' do
