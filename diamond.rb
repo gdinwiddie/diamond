@@ -7,12 +7,15 @@ class Diamond
     @letters= ('A' .. max_letter).to_a
   end
 
+  def either_letter_or_blank (position, letter)
+    (position == letter) ? letter : '_'
+  end
+
   def representation
     output= ""
     @letters.each { |letter| 
       @letters.reverse.each { |position|
-	character= (position == letter) ? letter : '_'
-	output << character
+	output << either_letter_or_blank(position, letter)
       }
       output << "\n"
     }
