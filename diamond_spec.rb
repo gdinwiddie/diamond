@@ -34,5 +34,13 @@ describe Diamond do
     it "has three lines in the representation" do
       expect(subject.representation.lines.count).to eql 5
     end
+
+    it "indents the first line" do
+      expect(subject.representation.lines[0]).to start_with "__A"
+    end
+
+    it "indents the second line" do
+      expect(subject.representation.lines[1]).to start_with "_B_"
+    end
   end
 end
