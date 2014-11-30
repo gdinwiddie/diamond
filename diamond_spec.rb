@@ -8,5 +8,11 @@ describe "setup" do
 end
 
 describe Diamond do
+  describe '.create(A)' do
+    subject { Diamond.create('A') }
 
+    it "has a trivial representation" do
+      expect(subject.representation).to eql "A\n"
+    end
+  end
 end
