@@ -26,6 +26,10 @@ describe Diamond do
     it "indents the first line" do
       expect(subject.representation.lines[0]).to start_with "_A"
     end
+
+    it "fills out the first line" do
+      expect(subject.representation.lines[0]).to end_with "A_\n"
+    end
   end
   
   describe '.create(C)' do

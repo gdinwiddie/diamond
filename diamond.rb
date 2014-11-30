@@ -17,6 +17,9 @@ class Diamond
       @letters.reverse.each { |position|
 	output << either_letter_or_blank(position, letter)
       }
+      @letters[1..-1].each { |position| 
+	output << either_letter_or_blank(position, letter)
+      }
       output << "\n"
     }
     @letters.reverse[1..-1].each { |letter| 
