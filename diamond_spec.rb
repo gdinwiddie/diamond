@@ -54,5 +54,14 @@ describe Diamond do
     it "indents the second line" do
       expect(subject.representation.lines[1]).to start_with "_B_"
     end
+
+    it "outputs the correct diamond" do
+      expected= "__A__\n"+
+		"_B_B_\n"+
+		"C___C\n"+
+		"_B_B_\n"+
+		"__A__\n"
+      expect(subject.representation).to eql expected
+    end
   end
 end
