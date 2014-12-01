@@ -43,7 +43,7 @@ describe Diamond do
   describe '.create(C)' do
     subject { Diamond.create('C') }
 
-    it "has three lines in the representation" do
+    it "has five lines in the representation" do
       expect(subject.representation.lines.count).to eql 5
     end
 
